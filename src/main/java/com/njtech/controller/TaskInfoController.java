@@ -80,8 +80,13 @@ public class TaskInfoController {
         String taskId = String.valueOf(snowflake.nextIdStr());
         taskInfo.setTaskId(taskId);
         String fileId = snowflake.nextIdStr();
+        taskInfo.setStatus("招募中");
 
-        taskInfoService.addTask(taskInfo);
+        boolean success = taskInfoService.addTask(taskInfo);
+        if (!success) {
+            return Result.error("6001", "系统错误，可能是出现重复主键，请稍后再试");
+        }
+
         if (!taskInfo.getTaskId().isEmpty()) {
             System.err.println(this.getClass() + " " + taskInfo.getTaskId());
         } else {
@@ -99,7 +104,7 @@ public class TaskInfoController {
     }
 
     @GetMapping("/getWorkerSubmissions/{task_id}")
-    public Result<List<SubmissionInfo>> getWorkerSubmissions(@PathVariable String task_id, HttpServletRequest request){
+    public Result<List<SubmissionInfo>> getWorkerSubmissions(@PathVariable String task_id, HttpServletRequest request) {
         String userId = (String) request.getAttribute("userId");
         if (userId.isEmpty()) {
             return Result.success(new ArrayList<>());

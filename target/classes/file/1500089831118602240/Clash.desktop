@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Clash for Windows
+Comment=Clash for Windows
+Exec=/usr/local/Clash\ for\ Windows/cfw
+Icon=/home/xwk/Pictures/Screenshots/cfw.ico
+Terminal=false	
+Type=Application
+Categories=Developer;

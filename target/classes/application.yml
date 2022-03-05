@@ -1,7 +1,7 @@
 server:
   port: 9999
   tomcat:
-    basedir: data
+    basedir: ../data
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver

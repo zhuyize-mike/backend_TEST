@@ -15,8 +15,8 @@ public class TaskInfoService {
     @Resource
     private TaskInfoDao taskInfoDao;
 
-    public void addTask(TaskInfo taskInfo) {
-        taskInfoDao.addTask(taskInfo);
+    public boolean addTask(TaskInfo taskInfo) {
+        return taskInfoDao.insert(taskInfo) == 1;
     }
 
     public List<TaskInfo> findTasksByUserId(String userId) {

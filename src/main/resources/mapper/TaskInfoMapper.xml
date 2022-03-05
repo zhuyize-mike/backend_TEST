@@ -2,16 +2,4 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.njtech.dao.TaskInfoDao">
 
-    <insert id="addTask" parameterType="com.njtech.entity.TaskInfo">
-        INSERT INTO task_info (task_id,name,brief,startTime,workerNum,type,user_id,status,finishTime) VALUES
-        (#{taskId},#{name},#{brief},#{startTime},#{workerNum},#{type},#{userId}, #{status},#{finishTime});
-    </insert>
-    <!--    <select id="findByName" resultType="com.njtech.entity.FileInfo">-->
-    <!--        select `task_info`.* from `task_info`-->
-    <!--        where 1 = 1-->
-    <!--&lt;!&ndash;        <if test="name != null and name != '' and name != 'all'">&ndash;&gt;-->
-    <!--&lt;!&ndash;            and `nx_system_file_info`.`originName` like concat('%', #{name}, '%')&ndash;&gt;-->
-    <!--&lt;!&ndash;        </if>&ndash;&gt;-->
-    <!--        order by `task_info`.task_id-->
-    <!--    </select>-->
 </mapper>

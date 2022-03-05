@@ -4,5 +4,4 @@ import com.njtech.entity.TaskInfo;
 import tk.mybatis.mapper.common.Mapper;
 
 public interface TaskInfoDao extends Mapper<TaskInfo> {
-    void addTask(TaskInfo taskInfo);
 }

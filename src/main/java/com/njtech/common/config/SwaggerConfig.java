@@ -53,7 +53,7 @@ public class SwaggerConfig {
         return new ApiInfoBuilder()
                 .title("COLLECT后端开发接口文档")
                 .description("**请忽略basic-error-controller**")
-                .version("5.0")
+                .version("6.0")
                 .build();
     }
 }
